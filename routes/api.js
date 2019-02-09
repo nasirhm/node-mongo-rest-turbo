@@ -4,24 +4,11 @@ const vertex = require('vertex360')({site_id: process.env.TURBO_APP_ID})
 const router = vertex.router()
 
 /*  This is a sample API route. */
-
-router.get('/:resource', (req, res) => {
+router.get('/test', (req,res) => {
 	res.json({
-		confirmation: 'success',
-		resource: req.params.resource,
-		query: req.query // from the url query string
+	confirmation : 'Confirmed',
+	data : 'This is a Test End Point'	
 	})
 })
-
-router.get('/:resource/:id', (req, res) => {
-	res.json({
-		confirmation: 'success',
-		resource: req.params.resource,
-		id: req.params.id,
-		query: req.query // from the url query string
-	})
-})
-
-
 
 module.exports = router
